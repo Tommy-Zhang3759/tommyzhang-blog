@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="author" content="Jinyuan">
+        <link href="../images/icon.png" rel="shortcut icon">
+        <title>Backend</title>
+        <link href="../mdui/css/mdui.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../backstage.css" />
+    </head>
+    <body class="mdui-appbar-with-toolbar">
+        <header class="mdui-appbar mdui-appbar-fixed" mdui-headroom>
+            <div class="mdui-toolbar mdui-color-indigo">
+              <button class="mdui-btn mdui-btn-icon" id="toggle"><i class="mdui-icon material-icons">menu</i></button>
+              <a onclick="window.location='../../index.html'" class="mdui-typo-headline">班级博客</a>
+              <a onclick="window.location='../../index.html'" class="mdui-typo-title">后台管理</a>
+              <div class="mdui-toolbar-spacer"></div>
+              <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" onclick="window.location.reload();"><i class="mdui-icon material-icons">refresh</i></a>
+              <a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" onclick="window.location='../../index.html';"><i class="mdui-icon material-icons">home</i></a>
+            </div>
+        </header>
+        <div class="mdui-drawer mdui-drawer-close" id="drawer" >
+            <ul class="mdui-list">
+              <li class="mdui-subheader">管理</li>
+              <li class="mdui-list-item mdui-ripple" onclick="window.location='../armanager/';">
+                <i class="mdui-list-item-icon mdui-icon material-icons">bookmark_border</i>
+                <a class="mdui-list-item-content">文章管理</a>
+              </li>
+              <li class="mdui-list-item mdui-ripple mdui-list-item-active">
+                <i class="mdui-list-item-icon mdui-icon material-icons">add_circle_outline</i>
+                <div class="mdui-list-item-content">新建文章</div>
+              </li>
+              <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">assessment</i>
+                <div class="mdui-list-item-content">菜单管理</div>
+              </li>
+              <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">account_box</i>
+                <div class="mdui-list-item-content">账户管理</div>
+              </li>
+              <li class="mdui-subheader">其他</li>
+              <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">bug_report</i>
+                <div class="mdui-list-item-content">报告问题</div>
+              </li>
+              <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">contacts</i>
+                <div class="mdui-list-item-content">关于我们</div>
+              </li>
+            </ul>
+        </div>
+        <div class="mdui-typo doc-container">
+            <h3>新建文章  <small>编辑文章</small></h3>
+            <div id="jin-editor"></div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <i class="mdui-icon material-icons">account_circle</i>
+                <label class="mdui-textfield-label">作者</label>
+                <input class="mdui-textfield-input" type="text" id="arauthor"/>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <i class="mdui-icon material-icons">title</i>
+                <label class="mdui-textfield-label">主标题</label>
+                <input class="mdui-textfield-input" type="text" id="artitle"/>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <i class="mdui-icon material-icons">subtitles</i>
+                <label class="mdui-textfield-label">副标题</label>
+                <input class="mdui-textfield-input" type="text" id="arsubtitle"/>
+            </div>
+            <button class="mdui-btn mdui-color-indigo-100 mdui-float-left mdui-ripple mdui-m-t-2 mdui-m-r-1 mdui-m-b-3 mdui-hoverable" onclick="cleaneditor();" mdui-tooltip="{content: '清空编辑器中所有内容'}">清空</button>
+            <button class="mdui-btn mdui-color-indigo-100 mdui-float-left mdui-ripple mdui-m-t-2 mdui-m-r-1 mdui-m-b-3 mdui-hoverable" onclick="getmd();" mdui-tooltip="{content: '获取编辑器中MarkDown内容'}">[调试]获取MD</button>
+            <button class="mdui-btn mdui-color-indigo-100 mdui-float-left mdui-ripple mdui-m-t-2 mdui-m-r-1 mdui-m-b-3 mdui-hoverable" onclick="gethtml();" mdui-tooltip="{content: '获取编辑器中HTML内容'}">[调试]获取HTML</button>
+            <button class="mdui-btn mdui-color-pink-400 mdui-float-right mdui-ripple mdui-m-t-2 mdui-m-b-3 mdui-hoverable" onclick="applyarticle();" mdui-tooltip="{content: '提交博文'}">提交</button>
+        </div>        
+        <script src="../mdui/js/mdui.min.js"></script>
+        <script src="../js/backstage.js"></script> 
+        <script src="../js/jineditor.js"></script>
+        <script type="text/javascript">
+            var je=new jineditor("jin-editor",500,3,"请键入内容");
+            je.tomd="../js/tomd.js";
+            je.create();
+        </script>
+
+    </body>
+</html>

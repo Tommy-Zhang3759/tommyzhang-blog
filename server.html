@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="author" content="Jinyuan">
+        <link href="images/icon.png" rel="shortcut icon">
+        <title>班级博客-登录</title>
+        <link href="server.css" rel="stylesheet" type="text/css" id="css">
+        <link href="scrollbar.css" rel="stylesheet" type="text/css" id="css">
+        <link href="https://fonts.font.im/css?family=Poppins:300,400,500" rel="stylesheet">
+        <link href="mdui/css/mdui.css" rel="stylesheet">
+    </head>
+    <body class="noselect">
+        <nav class="navbar">
+            <div class="icon nocallout"></div>
+            <div class="name">
+                <h1 onclick="window.location.href='https://fyeleven.gitee.io/';">登录</h1>
+            </div>
+            <div class="navbtngroup">
+                <a class="navbtn mdui-ripple" href="https://fyeleven.gitee.io/index.html">博客首页</a>
+                <a class="navbtn mdui-ripple" href="https://fyeleven.gitee.io/archive/ar2.html">关于</a>
+                <a class="navbtn mdui-ripple" href="https://gitee.com/fyeleven/fyeleven/tree/master/">仓库</a>
+            </div>
+            <button class="menuIcon mdui-ripple" onClick="openmenu()"></button>
+        </nav>
+        
+        
+        <div id="navMenu">   
+            <button class="navicon mdui-ripple" onClick="closemenu()"></button>
+            <h2 id="navtitle">Menu</h2>
+            <div class="mobilebtns mdui-ripple" onclick="window.location.href='https://fyeleven.gitee.io/index.html';">
+                <p class="navlink">博客首页</p>
+            </div>
+            <div class="mobilebtns mdui-ripple" onclick="window.location.href='https://fyeleven.gitee.io/archive/ar2.html';">
+                <p class="navlink">关于</p>
+            </div>
+            <div class="mobilebtns mdui-ripple" onclick="window.location.href='https://gitee.com/fyeleven/fyeleven/tree/master/';">
+                <p class="navlink">仓库</p>
+            </div>
+        </div>
+        <div class="mainbody">
+            <div class="login">
+                <h2 class="uptitle title">&lt;/.&gt;</h2>
+                <h1 class="title">登录</h1>
+                <input class="input" type="text" placeholder="UserName"/>
+                <input class="input" type="text" placeholder="Password"/>
+                <button type="button" class="applybtn mdui-ripple">LOGIN</button>
+                
+            </div>
+        </div>   
+    </body>
+    <script src="js/index.js"></script>
+    <script src="mdui/js/mdui.min.js"></script>
+    <script src="js/server.js"></script>
+</html>

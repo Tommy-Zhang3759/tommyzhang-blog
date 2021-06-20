@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+        <link href="../images/icon.png" rel="shortcut icon">
+        <title>飞翼十一</title>
+        <link href="../style.css" rel="stylesheet" type="text/css" id="css">
+        <link href="../scrollbar.css" rel="stylesheet" type="text/css" id="css">
+        <link href="https://fonts.font.im/css?family=Poppins:300,400,500" rel="stylesheet">
+        <link href="../mdui/css/mdui.css" rel="stylesheet">
+        <link href="../markdown.css" rel="stylesheet">
+        <style type="text/css">
+            .leftblock{
+                min-height: auto;
+                width:calc(80vw - 40px);
+                float: none;
+                min-width: 960px;
+            }
+            .rightblock{
+                height: 0px;
+                width: 0px;
+                display: none;
+            }
+            @media (max-width: 1200px){.leftblock{min-width: calc(80vw - 40px);}}
+        </style>
+    </head>
+    <body class="noselect">
+        <nav class="navbar">
+            <div class="icon nocallout"></div>
+            <div class="name">
+                <h1 onclick="window.location.href='https://fyeleven.gitee.io/';">飞翼十一</h1>
+            </div>
+            <div class="navbtngroup">
+                <a class="navbtn mdui-ripple" href="https://fyeleven.gitee.io/index.html">首页</a>
+                <a class="navbtn mdui-ripple" href="https://fyeleven.gitee.io/about.html">关于</a>
+                <a class="navbtn mdui-ripple" href="https://gitee.com/fyeleven/fyeleven/tree/master/">仓库</a>
+            </div>
+            <button class="menuIcon mdui-ripple" onClick="openmenu()"></button>
+        </nav>
+        
+        
+        <div id="navMenu">   
+            <button class="navicon mdui-ripple" onClick="closemenu()"></button>
+            <h2 id="navtitle">Menu</h2>
+            <div class="mobilebtns mdui-ripple" onclick="window.location.href='https://fyeleven.gitee.io/index.html';">
+                <p class="navlink">首页</p>
+            </div>
+            <div class="mobilebtns mdui-ripple" onclick="window.location.href='archive/ar2.html';">
+                <p class="navlink">关于</p>
+            </div>
+            <div class="mobilebtns mdui-ripple" onclick="window.location.href='https://gitee.com/fyeleven/fyeleven/tree/master/';">
+                <p class="navlink">仓库</p>
+            </div>
+        </div>
+        <div class="mainbody">
+            <section class="upimg">
+                <h3 id="hitokoto" class="yiyan " style="filter:none;">加载中...</h3>
+            </section>
+            <div class="midbody">
+                <div class="leftblock">
+                    <div id="ar-title" class="">
+                        <h1>爱心义卖</h1>
+                    </div>
+                    <div id="ar-date" class="">
+                        <h6>2021.4.15</h6>
+                    </div>
+                    
+                    <div id="ar-taggroup" class="">
+                        <button type="button" class="ar-tags mdui-ripple">活动</button>
+                    </div>
+                    <div id="ar-subtitle" class="nocallout ">
+                        <h4>“同在一片蓝天下”——第十二届校园爱心义卖</h4>
+                    </div> 
+                    <div class="markdown-body ar-frame  nocallout" id="markdown-addon">
+                        <p>4月15日下午，学校开展了<strong>“同在一片蓝天下”——第十二届校园爱心义卖</strong>。我们班的同学有的布置店铺、有的吆喝销售、有的收钱记账、有的负责卫生、有的维持秩序，他们各司其职、分工合作，在劳动中收获，在奉献中成长。
+                            <img src="ar4/1.JPG" alt="义卖">
+                            <img src="ar4/2.JPG" alt="义卖">
+                            <img src="ar4/3.JPG" alt="义卖">
+                            <img src="ar4/4.JPG" alt="义卖">
+                            黄雨辰同学用灵巧的双手诠释了色彩渲染在当代工艺装饰中的诗性表达，极具视觉冲击力，很快便销售一空。</p>
+                        <p><img src="ar4/5.JPG" alt="义卖"></p>
+                        <p>和其他班一样，我们班的一些同学也穿起了“奇装异服“，到校园的各处贩卖商品。</p>
+                        <p><img src="ar4/6.JPG" alt="义卖">
+                            <img src="ar4/7.JPG" alt="义卖"></p>
+                        <p>一幅幅精美的图案呈现在布面上时，同学们赞不绝口，惊诧于他们的精湛的手艺。当然，我们也能看见他们在幕后为之付出的诸多努力。</p>
+                    </div>
+                    <div id="ar-bmbtngroup">
+                        <button type="button" class="mdui-ripple mdui-ripple-white ar-bmbtns " id="bmbtn">
+                            <div class="bmbtn-icon" style="background-image: url(../images/like.svg);"></div>
+                            <div class="bmbtn-text">点赞</div></button>
+                        <button type="button" class="mdui-ripple mdui-ripple-white ar-bmbtns " id="bmbtn2">
+                            <div class="bmbtn-icon" style="background-image: url(../images/coin.svg);"></div>
+                            <div class="bmbtn-text">投币</div></button>
+                        <button type="button" class="mdui-ripple mdui-ripple-white ar-bmbtns " id="bmbtn3">
+                            <div class="bmbtn-icon" style="background-image: url(../images/favorite.svg);"></div>
+                            <div class="bmbtn-text">收藏</div></button>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="footblocks mdui-ripple">
+                        <h3>介绍</h3>
+                        <p>十一班班级博客</p>
+                        <p>……………………</p>
+                        <p>……………………</p>
+                    </div>
+                    <div class="vr"></div>
+                    <div class="footblocks  mdui-ripple">
+                        <h3>友情链接</h3>
+                        <li><a href="http://nsfzxc.cn/html/index.html">南师附中新城初中</a></li>
+                        <li><a href="http://www.nsfzxchsl.cn/">新城黄山路分校</a></li>
+                        <li><a href="http://www.nsfzxcykj.cn/html/index.html">新城怡康街分校</a></li>
+                    </div>
+                </footer>
+            <div class="copyright ">
+                <a class="copyrightlink" href="">© 2021 锦缘</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a class="copyrightlink" href="#">发行版</a>
+            </div>
+            <div class="fabbtns nocallout totop" id="totop">
+	            <button onClick="Totop()" type="button" class="totopbtn mdui-ripple"></button>
+            </div>
+            </div>
+            </div>
+    </body>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <script src="../js/index.js"></script>
+    <script src="../mdui/js/mdui.min.js"></script>
+    <script src="../js/article.js"></script>
+</html>

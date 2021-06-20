@@ -1,0 +1,366 @@
+:root{
+    --textcolor:#454545;
+    --texthovercolor:#a0a0a0;
+    --bgcolor1:#FFFFFF;
+    --bgcolor2:#F7F7F7;
+    --bgcolor3:#F0F0F0;
+    --shadowcolor:#00000017;
+    --loadingcolor:#EEEEEE;
+    --hovercolor:#E6E6E6;
+    --hovercolor2:#F2F2F2;
+}
+@font-face{
+    font-family: Helvetica,'Poppins',Times New Roman,SourceHanSansCN;
+    font-display: block;
+    src: url("https://fonts.font.im/css?family=Poppins:300,400,500");
+
+}
+@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+@-webkit-keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/         
+    100% {opacity:1;}/*结束状态 透明度为1*/  
+} 
+.noselect{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.selectable{
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+.nocallout{
+   -webkit-touch-callout:none;
+}
+html{
+    -webkit-font-smoothing: antialiased;
+    animation:fade-in;
+    -webkit-animation:fade-in 1s;
+    margin:0px;
+    padding:0px;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+::selection{
+    background-color: var(--textcolor);
+    color: var(--bgcolor1);
+}
+::-moz-selection{
+    background-color: var(--textcolor);
+    color: var(--bgcolor1);
+}
+::-webkit-selection{
+    background-color: var(--textcolor);
+    color: var(--bgcolor1);
+}
+body{
+    margin: 0px;
+    background-color: var(--bgcolor1);
+}
+button:focus{
+    outline: none;
+}
+.navbar{
+    display: flex;
+    position: fixed;
+    width: calc(100vw - 44px);
+    height: 40px;
+    padding: 22px;
+    background: var(--bgcolor1);
+    box-shadow:0px 0px 15px 2px var(--shadowcolor);
+    overflow: hidden;
+}
+.navbar a{
+    text-decoration: none;
+}
+.name{
+    font-family:"Poppins";
+    display: inline-flex;
+    font-size: 18px;
+    align-self: center;
+    margin-left:15px;
+    z-index: 999;
+    color: var(--textcolor);
+}
+.icon{
+    display: inline-block;
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+    background: linear-gradient(to top, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
+    align-self: center;
+    transition: 0.6s ease-in-out;
+    z-index:-1;
+}
+.navbtngroup{
+    display: flex;
+    align-self: center;
+    margin-left: 35px;
+}
+.navbtngroup a{
+        -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+        user-select: none;
+}
+.navbtn{
+    font-family:"Poppins";
+    font-size: 17px;
+    position:relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--textcolor);
+    padding: 7.5px 20px 7.5px 20px;
+    margin-right: 7px;
+    margin-left: 7px;
+    font-weight: 500;
+    align-self: center;
+    overflow:hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.navbtn:hover{
+    background-color: var(--hovercolor2);
+}
+.mobilebtngroup{
+    position: relative;
+    display: none;
+}
+.menuIcon{    
+    border: none;
+    border-radius: 50%;
+    box-shadow:0px 0px 15px 2px var(--shadowcolor);
+    position: absolute;
+    align-self: center;
+    left: 100%;
+    margin-left: -65px;
+    width:40px;
+    height: 40px;
+    padding: 0px;
+    background-image: url("images/menu.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:50% 50%;
+    background-color: var(--bgcolor1);
+    background-clip: content-box;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -o-transition: all .25s;
+    -ms-transition: all .25s;
+    transition: all .25s;
+    cursor: pointer;
+    display: none;
+    overflow: hidden;
+}
+
+#navMenu{
+    position:fixed;
+    height:calc(100% - 80px);
+    width: 65vw;
+    right: calc(-65vw - 110px);
+    top: 0px;
+    padding: 10px 20px 20px 20px;
+    background: var(--bgcolor1);
+    box-shadow:-7px -7px 25px 5px #00000025;   
+    border-radius: 15px;
+    margin: 25px 0px 25px 0px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.navicon{
+    position: absolute;
+    right: 7px;
+    top:7px;
+    background-image: url("images/close.svg");
+    background-repeat: no-repeat;
+    background-color: var(--bgcolor3);
+    background-position: center;
+    background-size: 65% 65%;
+    border: none;
+    border-radius: 50%;
+    transition: all 0.2s;
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+}
+.navicon:hover{
+    background-color: var(--hovercolor);
+}
+
+#navtitle{
+    color: var(--textcolor);
+    font-family: "Poppins";
+    margin-bottom: 5px;
+    margin-top:25px;
+}
+
+.mobilebtns{
+    position: relative;
+    border-radius: 10px;
+    height: 40px;
+    width: calc(100% - 40px);
+    display: inline-flex;
+    margin: 0px;
+    padding: 10px 20px;
+    background-color: var(--bgcolor3);
+    font-family: "Poppins";
+    margin-top: 10px;
+    overflow: hidden;
+    align-self: center;
+}
+
+.navlink{
+    align-self: center;
+    font-weight: 500;
+    color: var(--textcolor);
+}
+
+.copyright{
+    background-color: var(--bgcolor1);
+    border-radius: 15px;
+    margin:8px auto 15px auto;
+    padding: 7px 20px;
+    box-shadow: 0px 0px 6px 1px var(--shadowcolor);
+    text-align: center;
+}
+.copyrightlink{
+    text-decoration: none;
+    color: var(--textcolor);
+    font-family: "Poppins",Microsoft YaHei,Apple LiGothic Medium;
+    font-weight: 500;
+    transition: all .5s;
+}
+.copyrightlink:hover{
+    color: var(--texthovercolor);
+}
+.mainbody{
+    z-index: -1;
+    position: absolute;
+    margin-top: 85px;
+    height:calc(100% - 85px);
+    width: 100%;
+    display: flex;
+    background: var(--bgcolor2);
+    align-items: center;
+}
+.login{
+    width: 40%;
+    min-width: 355px;
+    max-width: 475px;
+    height: 500px;
+    margin: 0px auto;
+    background-color: var(--bgcolor1);
+    box-shadow: 0px 0px 15px 2px var(--shadowcolor);
+    border-radius: 13px;
+    align-items: center;
+    text-align: center;
+}
+.title{
+    color: var(--textcolor);
+    text-align: center;
+    font-family: "Poppins";
+    margin:10px auto 100px auto;
+    font-size: 35px;
+}
+.input{
+    outline-style: none;
+    background-color: #f1f1f1;
+    border-radius: 11px;
+    border:none;
+    padding: 10px 15px;
+    margin-bottom: 17px;
+    width: 60%;   
+    outline: 0;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 15px;
+    transition: .3s box-shadow ease-in-out;
+    transition: .3s background-color ease-in-out;
+}
+.input:hover{
+    background-color:#F5F5F5;
+}
+.input:focus{
+    padding: 7px 12px;
+    background-color:#F9F9F9;
+    border:3px solid #fad0c4;
+    -webkit-box-shadow: inset 0 1px 1px #fad0c4,0 0 10px #ffd1ff;
+    box-shadow: inset 0 1px 1px #ffd1ff,0 0 10px #fad0c4;
+}
+.applybtn{
+    overflow: hidden;
+    margin:30px auto;
+    position: relative;
+    width:calc(60% + 30px);
+    height: 43px;
+    background:linear-gradient(135deg, #f7c4b6 0%, #f7c4b6 1%, #ffc3ff 100%);
+    -webkit-box-shadow: inset 0 1px 1px #f7c4b6,0 0 10px #ffc3ff;
+    border: none;
+    color: white;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 11px;
+    z-index: 3;
+    transition: all .2s ease-in-out;
+}
+.applybtn:hover{
+    filter: brightness(93%);
+}
+.applybtn::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    top:0px;
+    right: 0px;
+    filter: blur(5px);
+    opacity: 0;
+    z-index: 2;
+}
+.uptitle{
+    margin:55px auto 0px auto;
+    font-size: 24px;
+}
+@media (max-width: 650px){
+    html{
+        letter-spacing:-0.25px;
+        -webkit-letter-spacing:0px;
+        font-size: 85%;
+    }
+    .navbtngroup{
+        display: none;
+    }
+    .menuIcon{
+        display: inline-flex !important;
+    }
+    .login{
+        width: 100%;
+        height:100%;
+        border-radius: 0px;
+        min-width: 0px;
+        max-width: none;
+    }
+    .input{
+        width: 72%;
+    }
+    .applybtn{
+        width:calc(72% + 30px);
+    }
+    .uptitle{
+        margin:100px auto 0px auto;
+    }
+}
